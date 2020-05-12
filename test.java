@@ -1,4 +1,4 @@
-private static WebDriver getRemoteDriver(String 192.168.126.146:4444/wd/hub){
+private static WebDriver getRemoteDriver(String selhub){
     DesiredCapabilities cap = new DesiredCapabilities();
   if (Consts.BROWSER_TYPE_FIREFOX.equals(EnvConfigFactory.getBrowser())){
       cap = DesiredCapabilities.firefox();
@@ -14,7 +14,7 @@ private static WebDriver getRemoteDriver(String 192.168.126.146:4444/wd/hub){
   
   URL url = null;
   try {
-       url = new URL(192.168.126.146:4444/wd/hub);
+       url = new URL(selhub);
   }catch (MalformedURLException e){
        e.printStackTrace();
        System.out.println("Can not find hub url!!");
